@@ -1,0 +1,21 @@
+{
+  "Name": "Gnome Sort",
+  "Date": "2000",
+  "Author": "Hamid Sarbazi-Azad",
+  "Description": "Gnome sort, also called the Stefano algorithm, is a relatively simple sorting technique with a unique approach. It maintains a single 'pivot' element and compares it with the element ahead. If they are in order, the pivot is shifted one position ahead. If not, they are swapped, and the process repeats with the swapped element becoming the new pivot.\n\nThis process continues until the pivot reaches the end of the array, indicating the entire array is sorted. Gnome sort has an average-case time complexity of O(n) but can degrade to O(n²) in the worst case. While potentially faster than bubble sort for some datasets, its niche nature limits its widespread adoption.",
+  "Complexity": {
+    "Time": "O(n²)",
+    "Best": "O(n)",
+    "Worst": "O(n²)",
+    "Space": "O(1)",
+    "Stable": "Yes"
+  },
+  "Algorithm": "async function sort(){let a=0;for(;a<array.length;)if(0==a&&a++,array[a]>=array[a-1])a++;else{if(swap(a,a-1),await sleep(),firstRun)return;a--}}",
+  "Code": {
+    "Python": "def gnomesort(arr):\n\tn = len(arr)\n\ti = 0\n\twhile i < n - 1:\n\t\t# If current element is smaller than the previous one, swap them\n\t\tif i == 0 or arr[i] >= arr[i - 1]:\n\t\t\ti += 1\n\t\telse:\n\t\t\tarr[i], arr[i - 1] = arr[i - 1], arr[i]\n\t\t\ti -= 1  # Move back one position to check again\n\n\t# Test array\n\tarr = [64, 34, 25, 12, 22, 11, 90]\n\tgnomesort(arr)\n\tprint('Sorted array is:', arr)",
+    "JavaScript": "function gnomesort(arr) {\n\tlet n = arr.length;\n\tlet i = 0;\n\twhile (i < n - 1) {\n\t\t// If current element is smaller than the previous one, swap them\n\t\tif (i === 0 || arr[i] >= arr[i - 1]) {\n\t\t\ti++;\n\t\t} else {\n\t\t\t[arr[i], arr[i - 1]] = [arr[i - 1], arr[i]]; // Swap using destructuring\n\t\t\ti--;\n\t\t}\n\t}\n\n\t// Test array\n\tlet arr = [64, 34, 25, 12, 22, 11, 90];\n\tg nomesort(arr);\n\tconsole.log('Sorted array is:', arr);\n}",
+    "Java": "public static void gnomesort(int[] arr) {\n\tint n = arr.length;\n\tint i = 0;\n\twhile (i < n - 1) {\n\t\t// If current element is smaller than the previous one, swap them\n\t\tif (i == 0 || arr[i] >= arr[i - 1]) {\n\t\t\ti++;\n\t\t} else {\n\t\t\tint temp = arr[i]; // Use a temporary variable\n\t\t\tarr[i] = arr[i - 1];\n\t\t\tarr[i - 1] = temp;\n\t\t\ti--;\n\t\t}\n\t}\n\n\t// Test array\n\tint[] arr = {64, 34, 25, 12, 22, 11, 90};\n\tg nomesort(arr);\n\tSystem.out.println(\"Sorted array is:\" + java.util.Arrays.toString(arr));\n}",
+    "Go": "func gnomesort(arr []int) {\n\tn := len(arr)\n\ti := 0\n\tfor i < n - 1 {\n\t\t// If current element is smaller than the previous one, swap them\n\t\tif i == 0 || arr[i] >= arr[i-1] {\n\t\t\ti++\n\t\t} else {\n\t\t\tarr[i], arr[i-1] = arr[i-1], arr[i]\n\t\t\ti--\n\t\t}\n\t}\n\n\t// Test array\n\tarr := []int{64, 34, 25, 12, 22, 11, 90}\n\tg nomesort(arr)\n\tfmt.Println(\"Sorted array is:\", arr)\n}",
+    "C": "void gnomesort(int arr[], int n) {\n\tint i = 0;\n\twhile (i < n - 1) {\n\t\t// If current element is smaller than the previous one, swap them\n\t\tif (i == 0 || arr[i] >= arr[i - 1]) {\n\t\t\ti++;\n\t\t} else {\n\t\t\tint temp = arr[i]; // Temporary variable for swap\n\t\t\tarr[i] = arr[i - 1];\n\t\t\tarr[i - 1] = temp;\n\t\t\ti--;\n\t\t}\n\t}\n\n\t// Test array\n\tint arr[] = {64, 34, 25, 12, 22, 11, 90};\n\tint n = sizeof(arr) / sizeof(arr[0]);\n\tg nomesort(arr, n);\n\tprintf(\"Sorted array is: \");\n\tfor (int i = 0; i < n; i++) {\n\t\tprintf(\"%d \", arr[i]);\n\t}\n}"
+  }
+}

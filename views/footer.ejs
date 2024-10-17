@@ -1,0 +1,15 @@
+    <footer>
+      <p>&copy; <%= year %> Sorts Visualizer. Licensed under GPLv3.</p>
+    </footer>
+    <div id="toggle"></div>
+    <div id="theme">
+      <img id='light' src="/assets/sun.png" alt='light' class='active' />
+      <img id='dark' src="/assets/moon.png" alt='dark' />
+    </div>
+    <div id="overlay"></div>
+    <% if (title.match(/sort|custom/i)) { %>
+    <script src="/sort.js"></script>
+    <% } %>
+    <script src="/script.js"></script>
+  </body>
+</html>
